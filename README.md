@@ -7,6 +7,5 @@ Projeto que visa em criar um plataforma para aplicar Sistema de Logística Rever
 <p><a href="https://github.com/alecct812">Alec Theotônio</a> 
 <p><a href="https://github.com/TheEuri">Eurivaldo Vasconcelos</a> 
 <p><a href="https://github.com/Felipeserpa01">Felipe Serpa</a> 
-<p><a href="https://github.com/gabrielgrm">Gabriel Rodrigues</a> 
 <p><a href="https://github.com/lizandravieira">Lizandra Vieira</a> 
 <p><a href="https://github.com/Pedrolira16">Pedro Wanderley</a> 
