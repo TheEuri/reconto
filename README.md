@@ -3,7 +3,7 @@
 
 Projeto que visa em criar um plataforma para aplicar Sistema de Logística Reversa para descartar corretamente o lixo eletrônico no contexto recifense, unindo consumidores, empresas e serviços públicos.
 
-<h2>🤝Colaboradores:</h2>
+<h2>👨‍💻👩‍💻 Desenvolvedores:</h2>
 <p><a href="https://github.com/alecct812">Alec Theotônio</a> 
 <p><a href="https://github.com/TheEuri">Eurivaldo Vasconcelos</a> 
 <p><a href="https://github.com/Felipeserpa01">Felipe Serpa</a> 
