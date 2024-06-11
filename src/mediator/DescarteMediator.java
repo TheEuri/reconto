@@ -1,5 +1,9 @@
 package mediator;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 import dao.GenericDAO;
 import entidades.Descarte;
 
@@ -49,4 +53,30 @@ public class DescarteMediator {
             return "Falha ao excluir descarte.";
         }
     }
+
+    // buscarTodosDescartesCliente
+    public List<Descarte> buscarTodosDescartesCliente(String cpf) {
+    // Obtém a lista de todos os descartes
+    List<Descarte> todosDescartes = descarteDao.buscarTodos();
+
+    // Filtra a lista para incluir apenas os descartes do cliente especificado
+    List<Descarte> descartesCliente = new ArrayList<>();
+    for (Descarte descarte : todosDescartes) {
+        if (descarte.getCliente().getCpf().equals(cpf)) {
+            descartesCliente.add(descarte);
+        }
+    }
+
+    return descartesCliente;
+}
+
+    public String gerarCodigoAutenticacao() {
+    String letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    Random random = new Random();
+    StringBuilder codigo = new StringBuilder(6);
+    for (int i = 0; i < 6; i++) {
+        codigo.append(letras.charAt(random.nextInt(letras.length())));
+    }
+    return codigo.toString();
+}
 }

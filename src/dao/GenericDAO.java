@@ -1,6 +1,8 @@
 package dao;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class GenericDAO<T> {
@@ -19,6 +21,10 @@ public class GenericDAO<T> {
     public T buscar(String id) {
         return database.get(id);
     }
+
+    public List<T> buscarTodos() {
+    return new ArrayList<>(database.values());
+}
     
     public boolean incluir(T objeto) {
         String id = obterIdUnico(objeto);

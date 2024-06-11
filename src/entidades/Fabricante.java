@@ -8,6 +8,9 @@ public class Fabricante {
 		this.nome = nome;
 		this.credito = credito;
 	}
+  public Fabricante(String nome) {
+    this.nome = nome;
+  }
 	public String getNome() {
 		return nome;
 	}

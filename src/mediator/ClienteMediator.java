@@ -68,4 +68,12 @@ public class ClienteMediator {
             return "Erro ao excluir cliente. Cliente não encontrado.";
         }
     }
+
+    public Cliente autenticar(String cpf, String senha) {
+        Cliente cliente = clienteDao.buscar(cpf);
+        if (cliente != null && cliente.getSenha().equals(senha)) {
+            return cliente;
+        }
+        return null;
+    }
 }

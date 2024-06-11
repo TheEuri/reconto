@@ -10,6 +10,13 @@ public class Produto {
 		this.codigo = codigo;
 		this.fabricante = fabricante;
 	}
+
+  public Produto(String nome, String codigo, String fabricante) {
+    this.nome = nome;
+    this.codigo = codigo;
+    this.fabricante = new Fabricante(fabricante);
+  }
+
 	public String getNome() {
 		return nome;
 	}
