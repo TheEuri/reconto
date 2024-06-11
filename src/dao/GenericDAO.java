@@ -8,11 +8,12 @@ public class GenericDAO<T> {
     private Map<String, T> database = new HashMap<>(); // vai simular um banco de dados, visse?
     
     private String obterIdUnico(T objeto) {
-        try {
-            return (String) objeto.getClass().getMethod("getId").invoke(objeto);
-        } catch (Exception e) {
-            throw new RuntimeException("Erro ao obter ID único", e);
-        }
+      try {
+        Object id = objeto.getClass().getMethod("getId").invoke(objeto);
+        return String.valueOf(id);
+      } catch (Exception e) {
+        throw new RuntimeException("Erro ao obter ID único", e);
+      }
     }
     
     public T buscar(String id) {
