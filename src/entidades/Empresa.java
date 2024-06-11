@@ -1,91 +1,89 @@
 package entidades;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Empresa {
 	
 	private String descricao;
 	private String telefone;
 	private String logo;
-	private String cnpj; ;//presumi que o cnpj não será algo que vai ser permitido trocar, tendo em vista q é algo unico de cada empresa, por isso sem set
-	private PontoDeColeta pontoDeColetaEmpresa; //o addPontoDeColeta do diagrama não seria o próprio set?
+	private final String cnpj;
+	private List<PontoDeColeta> pontosDeColeta; 
+	private List<Descarte> descartes;
+	private Dados dados;
 	
-	
-	public Empresa() 
-	{
-		super();
-	}
-	
-	
-	public Empresa(String descricao, String telefone, String logo, String cnpj, PontoDeColeta pontoDeColetaEmpresa) 
-	{
-		super();
+	public Empresa(String descricao, String telefone, String logo, String cnpj, List<PontoDeColeta> pontosDeColeta) {
 		this.descricao = descricao;
 		this.telefone = telefone;
 		this.logo = logo;
 		this.cnpj = cnpj;
-		this.pontoDeColetaEmpresa = pontoDeColetaEmpresa;
-	}
-	
-	public Empresa(String descricao, String telefone, String logo, String cnpj) //construtor sem Ponto de coleta
-	{
-		this(descricao, telefone, logo, cnpj, null);
-	}
-	
-	public Empresa(String telefone, String logo, String cnpj) //construtor sem ponto de coleta e sem descrição
-	{
-		this(null, telefone, logo, cnpj, null);
-	}
-	
-	public Empresa(String telefone, String logo, String cnpj, PontoDeColeta pontoDeColetaEmpresa) 
-	{
-		this(null, telefone, logo, cnpj, pontoDeColetaEmpresa);
+		this.pontosDeColeta = pontosDeColeta != null ? pontosDeColeta : new ArrayList<>();
+		this.descartes = new ArrayList<>();
 	}
 
+	public Empresa(String descricao, String telefone, String logo, String cnpj) {
+		this(descricao, telefone, logo, cnpj, null);
+	}
+
+	public Empresa(String telefone, String logo, String cnpj) {
+		this(null, telefone, logo, cnpj, null);
+	}
 
 	public String getDescricao() {
 		return descricao;
 	}
 
-
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-
 
 	public String getTelefone() {
 		return telefone;
 	}
 
-
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-
 
 	public String getLogo() {
 		return logo;
 	}
 
-
 	public void setLogo(String logo) {
 		this.logo = logo;
 	}
 
-
-	public PontoDeColeta getPontoDeColetaEmpresa() {
-		return pontoDeColetaEmpresa;
+	public List<PontoDeColeta> getPontosDeColeta() {
+		return pontosDeColeta;
 	}
 
-
-	public void setPontoDeColetaEmpresa(PontoDeColeta pontoDeColetaEmpresa) {
-		this.pontoDeColetaEmpresa = pontoDeColetaEmpresa;
+	public void setPontosDeColeta(List<PontoDeColeta> pontosDeColeta) {
+		this.pontosDeColeta = pontosDeColeta;
 	}
 
+	public List<Descarte> getDescartes() {
+		return descartes;
+	}
+
+	public void setDescartes(List<Descarte> descartes) {
+		this.descartes = descartes;
+	}
 
 	public String getCnpj() {
 		return cnpj;
 	}
-	
-	
-	
 
+	public void adicionarPontoDeColeta(PontoDeColeta pontoDeColeta) {
+		if (pontoDeColeta != null) {
+			pontosDeColeta.add(pontoDeColeta);
+		}
+	}
+
+	public void adicionarDescarte(Descarte descarte) {
+		if (descarte != null) {
+			descartes.add(descarte);
+		}
+	}
 }
+
