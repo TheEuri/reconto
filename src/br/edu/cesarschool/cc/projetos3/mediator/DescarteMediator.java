@@ -54,12 +54,9 @@ public class DescarteMediator {
         }
     }
 
-    // buscarTodosDescartesCliente
     public List<Descarte> buscarTodosDescartesCliente(String cpf) {
-    // Obtém a lista de todos os descartes
     List<Descarte> todosDescartes = descarteDao.buscarTodos();
 
-    // Filtra a lista para incluir apenas os descartes do cliente especificado
     List<Descarte> descartesCliente = new ArrayList<>();
     for (Descarte descarte : todosDescartes) {
         if (descarte.getCliente().getCpf().equals(cpf)) {

@@ -5,10 +5,9 @@ import java.awt.*;
 
 public class TelaInicialGUI {
 
-  private static JFrame frame; 
+  private static JFrame frame;
 
-  
-  public TelaInicialGUI () {
+  public TelaInicialGUI() {
     SwingUtilities.invokeLater(() -> {
       frame = new JFrame("Reconto Platform");
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -107,10 +106,10 @@ public class TelaInicialGUI {
       loginButton.setMaximumSize(new Dimension(321, 50));
 
       loginButton.addActionListener(e -> {
-        frame.dispose();  // fechar a janela atual
-        new TelaLoginGUI();  // abrir a nova janela
+        frame.dispose();
+        new TelaLoginGUI();
       });
-      
+
       mainPanel.add(Box.createRigidArea(new Dimension(0, 40)));
       mainPanel.add(loginButton);
       frame.add(new JScrollPane(mainPanel), BorderLayout.CENTER);

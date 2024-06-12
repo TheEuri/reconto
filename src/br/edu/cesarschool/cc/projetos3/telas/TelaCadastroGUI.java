@@ -23,22 +23,18 @@ public class TelaCadastroGUI {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1920, 1000);
 
-        // Main Panel
         JPanel mainPanel = new JPanel(new BorderLayout());
         mainPanel.setBackground(new Color(228, 234, 238));
 
-        // div-2 Panel
         JPanel div2Panel = new JPanel();
         div2Panel.setLayout(new BoxLayout(div2Panel, BoxLayout.X_AXIS));
         div2Panel.setBackground(new Color(228, 234, 238));
 
-        // column Panel
         JPanel columnPanel = new JPanel();
         columnPanel.setLayout(new BoxLayout(columnPanel, BoxLayout.Y_AXIS));
         columnPanel.setBackground(new Color(228, 234, 238));
         columnPanel.setPreferredSize(new Dimension(68, 600));
 
-        // div-3 Panel with Image
         JPanel div3Panel = new JPanel(new GridBagLayout());
         div3Panel.setBackground(new Color(17, 17, 17));
         div3Panel.setPreferredSize(new Dimension(609, 600));
@@ -49,19 +45,16 @@ public class TelaCadastroGUI {
 
         columnPanel.add(div3Panel);
 
-        // column-2 Panel
         JPanel column2Panel = new JPanel();
         column2Panel.setLayout(new BoxLayout(column2Panel, BoxLayout.Y_AXIS));
         column2Panel.setBackground(new Color(228, 234, 238));
         column2Panel.setPreferredSize(new Dimension(32, 600));
         column2Panel.setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 20));
 
-        // div-4 Panel
         JPanel div4Panel = new JPanel();
         div4Panel.setLayout(new BoxLayout(div4Panel, BoxLayout.Y_AXIS));
         div4Panel.setBackground(new Color(228, 234, 238));
 
-        // Adding elements to div-4 Panel
         JLabel div5Label = new JLabel("Realize o seu cadastro");
         div5Label.setFont(new Font("Inter", Font.BOLD, 40));
         div5Label.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -74,14 +67,12 @@ public class TelaCadastroGUI {
         div7Label.setFont(new Font("Inter", Font.PLAIN, 16));
         div7Label.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        // Create text fields with placeholder
         JTextField nomeField = createStyledTextField("Nome");
         JTextField cpfField = createStyledTextField("CPF");
         JTextField emailField = createStyledTextField("E-mail");
         JTextField enderecoField = createStyledTextField("Endereço");
         JTextField senhaField = createStyledTextField("Senha");
 
-        // Checkbox for location access
         JCheckBox locationCheckBox = new JCheckBox("Permitir acesso à localização");
         locationCheckBox.setFont(new Font("Inter", Font.PLAIN, 16));
         locationCheckBox.setBackground(new Color(228, 234, 238));
@@ -140,14 +131,11 @@ public class TelaCadastroGUI {
 
         column2Panel.add(div4Panel);
 
-        // Adding columns to div2Panel
         div2Panel.add(columnPanel);
         div2Panel.add(column2Panel);
 
-        // Adding div2Panel to mainPanel
         mainPanel.add(div2Panel, BorderLayout.CENTER);
 
-        // Adding mainPanel to frame
         frame.add(mainPanel);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
@@ -158,9 +146,8 @@ public class TelaCadastroGUI {
         textField.setBorder(new LineBorder(Color.white, 1, true));
         textField.setMaximumSize(new Dimension(Integer.MAX_VALUE, 40));
         textField.setFont(new Font("Inter", Font.PLAIN, 16));
-        textField.setMargin(new Insets(5, 10, 5, 10)); // padding
+        textField.setMargin(new Insets(5, 10, 5, 10)); 
 
-        // Placeholder logic
         textField.setText(placeholder);
         textField.setForeground(Color.GRAY);
         textField.addFocusListener(new FocusAdapter() {

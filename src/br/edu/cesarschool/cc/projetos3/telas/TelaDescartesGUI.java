@@ -6,7 +6,6 @@ import javax.swing.border.LineBorder;
 import br.edu.cesarschool.cc.projetos3.entidades.Cliente;
 import br.edu.cesarschool.cc.projetos3.entidades.Descarte;
 import br.edu.cesarschool.cc.projetos3.entidades.Produto;
-import br.edu.cesarschool.cc.projetos3.mediator.ClienteMediator;
 import br.edu.cesarschool.cc.projetos3.mediator.DescarteMediator;
 
 import java.awt.*;
@@ -26,11 +25,9 @@ public class TelaDescartesGUI extends JFrame {
         setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
         getContentPane().setBackground(Color.WHITE);
 
-        // Primeiro bloco
         JPanel panel1 = createFirstBlock(cliente);
         add(panel1);
 
-        // Segundo bloco
         descartesPanel = createSecondBlock(cliente);
         add(descartesPanel);
 
@@ -43,7 +40,6 @@ public class TelaDescartesGUI extends JFrame {
         panel.setPreferredSize(new Dimension(1400, 330));
         panel.setBackground(Color.WHITE);
 
-        // Conteúdo existente
         JPanel existingContent = new JPanel();
         existingContent.setBorder(new LineBorder(new Color(228, 234, 238), 1));
         existingContent.setLayout(new BorderLayout());
@@ -83,7 +79,6 @@ public class TelaDescartesGUI extends JFrame {
         innerPanel.add(buttonsPanel);
         existingContent.add(innerPanel, BorderLayout.CENTER);
 
-        // Novo conteúdo (Novo Descarte)
         JPanel novoDescartePanel = new JPanel();
         novoDescartePanel.setBorder(new LineBorder(new Color(228, 234, 238), 1));
         novoDescartePanel.setLayout(new BorderLayout());
@@ -100,12 +95,11 @@ public class TelaDescartesGUI extends JFrame {
         infoLabel.setLayout(new FlowLayout(FlowLayout.LEFT));
         formPanel.add(infoLabel);
 
-        // Create fild for product name
         JPanel nomePanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JLabel nomeLabel = createTextLabel("Nome do Produto:", 14);
         nomePanel.add(nomeLabel);
         JTextField nomeField = new JTextField();
-        nomeField.setPreferredSize(new Dimension(200, 20)); // Set the preferred size to make the text field visible
+        nomeField.setPreferredSize(new Dimension(200, 20));
         nomePanel.add(nomeField);
         formPanel.add(nomePanel);
         
@@ -113,7 +107,7 @@ public class TelaDescartesGUI extends JFrame {
         JLabel codigoLabel = createTextLabel("Código do Produto:", 14);
         codigoPanel.add(codigoLabel);
         JTextField codigoField = new JTextField();
-        codigoField.setPreferredSize(new Dimension(200, 20)); // Set the preferred size to make the text field visible
+        codigoField.setPreferredSize(new Dimension(200, 20));
         codigoPanel.add(codigoField);
         formPanel.add(codigoPanel);
         
@@ -121,7 +115,7 @@ public class TelaDescartesGUI extends JFrame {
         JLabel fabricanteLabel = createTextLabel("Fabricante:", 14);
         fabricantePanel.add(fabricanteLabel);
         JTextField fabricanteField = new JTextField();
-        fabricanteField.setPreferredSize(new Dimension(200, 20)); // Set the preferred size to make the text field visible
+        fabricanteField.setPreferredSize(new Dimension(200, 20)); 
         fabricantePanel.add(fabricanteField);
         formPanel.add(fabricantePanel);
         
@@ -156,7 +150,6 @@ public class TelaDescartesGUI extends JFrame {
         
         novoDescartePanel.add(formPanel, BorderLayout.CENTER);
 
-        // Adicionando os dois conteúdos ao painel principal
         panel.add(existingContent);
         panel.add(Box.createRigidArea(new Dimension(0, 10)));
         panel.add(novoDescartePanel);
@@ -164,7 +157,6 @@ public class TelaDescartesGUI extends JFrame {
         return panel;
     }
 
-    // Segundo bloco
     private JPanel createSecondBlock(Cliente cliente) {
         JPanel panel = new JPanel();
         panel.setBorder(new LineBorder(new Color(228, 234, 238), 1));

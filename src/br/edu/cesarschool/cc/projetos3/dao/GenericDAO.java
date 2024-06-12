@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class GenericDAO<T> {
     
-    private Map<String, T> database = new HashMap<>(); // vai simular um banco de dados, visse?
+    private Map<String, T> database = new HashMap<>();
     
     private String obterIdUnico(T objeto) {
       try {
