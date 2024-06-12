@@ -24,4 +24,9 @@ public class Fabricante {
 		this.credito = credito;
 	}
 
+  @Override
+  public String toString() {
+    return this.nome;
+  }
+
 }
